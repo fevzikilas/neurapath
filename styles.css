@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: #121212;
+    color: #ffffff;
+    scrollbar-width: thin; 
+    scrollbar-color: #ff9800 #000000; 
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff9800;
+    border-radius: 10px;
+    border: 3px solid #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    height: 100vh;
+}
+
+.playlists {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.playlist {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: none; 
+}
+
+.playlist.active {
+    display: block; 
+}
+
+h2 {
+    text-align: center;
+    color: #ff9800;
+}
+
+.video-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.video-container:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+    margin: 10px;
+    border: 2px solid #ff9800;
+}
+
+p {
+    margin: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.video-container img {
+    margin-right: 20px;
+}
+
+.video-container:nth-child(even) img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-details h3 {
+    margin: 0;
+}
+
+.note p {
+    background-color: #000000;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.bubble-panel {
+    display: flex;
+    justify-content: center;
+}
+.bubble {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 15px 15px 0 0;
+    cursor: pointer;
+}
+.bubble.active {
+    background-color: #ff9800;
+}
